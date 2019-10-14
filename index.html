@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>jikerTodos</title>
+  <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+  <div class="todos-container">
+    <h1 class="todos-title">极客 todos</h1>
+    <div class="todos-content">
+      <div class="todos-input-cell">
+        <input id="todo-input" class="todos-input" type="text" name="todo" placeholder="需要做什么呢？">
+      </div>
+      <div id="todos-list" class="todos-list">
+        <div class="todo-item active">
+          <div class="todo-item-hd"></div>
+          <div class="todo-item-bd">代办一</div>
+          <div class="todo-item-ft">x</div>
+        </div>
+        <div class="todo-item">
+          <div class="todo-item-hd"></div>
+          <div class="todo-item-bd">代办二</div>
+          <div class="todo-item-ft">x</div>
+        </div>
+      </div>
+      <div class="todos-filter" id="todos-filter">
+        <div class="filter-count">
+          <span class="filter-count-number">2</span>
+          <span class="filter-count-text">项目</span>
+        </div>
+        <div class="filter-list" id="filter-list">
+          <span class="filter-item active">全部</span>
+          <span class="filter-item">待办</span>
+          <span class="filter-item">已办</span>
+        </div>
+        <div class="filter-remove" id="filter-remove">
+          <span class="filter-remove-put" >删除已完成</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./js/index.js"></script>
+</body>
+</html>
