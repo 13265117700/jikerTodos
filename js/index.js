@@ -21,7 +21,6 @@ const PAGE = {
     this.getTodos();
     this.bind();
     this.render();
-    
   },
 
   bind:function(){
@@ -151,7 +150,7 @@ const PAGE = {
     PAGE.render();
   },
   
-  filterRemoveTodo:function(e){
+  filterRemoveTodo:function(){
     let todos = PAGE.data.todos;
     let todo = todos.filter(data => !data.completed);
     PAGE.data.todos = todo
