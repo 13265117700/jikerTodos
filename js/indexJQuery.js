@@ -19,11 +19,9 @@ const PAGE = {
     this.getTodos();
     this.render();
     this.bind();
-    
   },
 
   bind:function(){
-    console.log(123,$('.todo-item-hd'),this.toggleTodo)
     $('#todo-input').on('keyup',this.addTodo);
     $('#todos-list').on('click', '.todo-item-hd',this.toggleTodo);
     $('#todos-list').on('click', '.todo-item-ft',this.removeTodo);
@@ -50,6 +48,7 @@ const PAGE = {
     let filters = PAGE.data.filters;
     let filter = PAGE.data.filter;
     todos.forEach((data,index)=> data.index = index);
+
     let showTodo;
     switch(filter){
       case 2:
@@ -62,6 +61,7 @@ const PAGE = {
         showTodo = todos;
         break;
     }
+    console.log(showTodo)
     PAGE.data.total = showTodo.length;
 
     let todosElement = showTodo.map((data)=>{

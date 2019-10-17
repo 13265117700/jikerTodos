@@ -38,20 +38,27 @@ const PAGE = {
     window.addEventListener('unload',this.saveTodos);
   },
 
+  //委托封装函数
   onEventLister:function(parentNode,action,childClassName,callback){
     parentNode.addEventListener(action,function(e){
       e.target.className.indexOf(childClassName) >= 0 && callback(e);
     })
   },
 
+  //储存本地数据事件
   saveTodos:function(){
     let todos = PAGE.data.todos;
+    //把数据转换为JSON字符串
     let todosStr = JSON.stringify(todos);
+    //储存数据
     localStorage.setItem('todos',todosStr);
   },
 
+  //获取本地数据事件
   getTodos:function(){
+    //读取数据
     let todos = localStorage.getItem('todos');
+    //解析JSON字符
     todos = JSON.parse(todos) || [];
     PAGE.data.todos = todos;
     this.render();
