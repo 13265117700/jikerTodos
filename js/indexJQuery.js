@@ -106,10 +106,15 @@ const PAGE = {
       return;
     }
     let todos = PAGE.data.todos;
-    todos.push({
-      title:value,
-      completed:false
+    let tmp = todos.find(function(data){
+      return value == data.title
     })
+    if(!tmp){
+      todos.push({
+        title:value,
+        complete:false
+      })
+    }
     PAGE.render();
     this.value = '';
   },

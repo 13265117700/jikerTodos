@@ -126,10 +126,16 @@ const PAGE = {
       return;
     }
     let todos = PAGE.data.todos;
-    todos.push({
-      title: value,
-      completed:false
+    let tmp = todos.find(function(data){
+      return value == data.title
     })
+    console.log(tmp)
+    if(!tmp){
+      todos.push({
+        title:value,
+        complete:false
+      })
+    }
     this.value = '';
     PAGE.render();
   },
